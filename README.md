@@ -44,7 +44,7 @@ works on
 * `apt upgrade`
 * `pkg install python3`
 * `pkg install git`
-* `git clone https://github.com/iescly/instagram-followers`
+* `git clone https://github.com/iescly/Instagram-Followers`
 * `cd instagram-folowers`
 * `pip install -r requirements.txt`
 * `chmod +x *`
@@ -53,7 +53,7 @@ works on
 ### INSTALLATION [Windows]
 [Download python](https://www.python.org/downloads/) and [git](https://git-scm.com/downloads)
 
-* `git clone https://github.com/iescly/instagram-followers`
+* `git clone https://github.com/iescly/Instagram-Followers`
 * `cd instagram-folowers`
 * `pip install -r requirements.txt`
 * `python main.py`
@@ -65,7 +65,7 @@ works on
 * `sudo apt install python`
 * `sudo apt install python3`
 * `sudo apt install git`
-* `git clone https://github.com/iescly/instagram-followers`
+* `git clone https://github.com/iescly/Instagram-Followers`
 * `cd instagram-folowers`
 * `pip3 install -r requirements.txt`
 * `chmod +x *`
