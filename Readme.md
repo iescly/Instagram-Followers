@@ -35,9 +35,10 @@ Works On
    cd Instagram-Followers
    pip install -r requirements.txt
    python instagram-followers.py
+
    
-   ## Usage 
-  Launch the script with python instagram-Followers.py.
+ ##usage: 
+ Launch the script with python instagram-Followers.py.
   Enter a public Instagram account name when prompted.
   Choose an option:
   1: Simulate adding likes to a post (requires a valid post URL).
