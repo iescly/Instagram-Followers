@@ -1,0 +1,133 @@
+import os
+import requests
+import colorama
+from colorama import Fore, Style
+from time import sleep
+
+# Initialize colorama for colored terminal output
+colorama.init()
+
+# Mock instabot module (since it’s not a real library)
+class Instabot:
+    @staticmethod
+    def add_like(post_url):
+        # Simulate liking a post (replace with actual API call if available)
+        print(f"{Fore.GREEN}Simulating like on {post_url}{Style.RESET_ALL}")
+        return True
+
+    @staticmethod
+    def add_view(story_url):
+        # Simulate viewing a story
+        print(f"{Fore.GREEN}Simulating view on {story_url}{Style.RESET_ALL}")
+        return True
+
+    @staticmethod
+    def add_follower(account_name):
+        # Simulate following an account
+        print(f"{Fore.GREEN}Simulating follow for {account_name}{Style.RESET_ALL}")
+        return True
+
+# Mock accounts module
+class Accounts:
+    @staticmethod
+    def new_instagram(action):
+        # Simulate creating a new account and performing an action
+        print(f"{Fore.YELLOW}Creating new account and performing: {action}{Style.RESET_ALL}")
+        return True
+
+# Configuration
+GITHUB_URL = "https://github.com/iescly"
+REPOS_URL = "https://github.com/iescly?tab=repositories"
+HOWTO_URL = "https://github.com/iescly/Instagram-Followers/blob/main/README.md"
+CODE_URL = "https://github.com/iescly/Instagram-Followers/blob/main/main.py"
+REQUIREMENTS_URL = "https://github.com/iescly/Instagram-Followers/blob/main/reqs.txt"
+OWNER_NAME = "iescly"
+
+# Set terminal title
+os.system("title Instagram Followers, Likes, and Views Botter")
+
+def validate_instagram_account(account_name):
+    """Check if an Instagram account exists (simplified)."""
+    try:
+        response = requests.get(f"https://www.instagram.com/{account_name}/", timeout=5)
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
+
+def validate_url(url):
+    """Check if a URL is valid."""
+    try:
+        response = requests.head(url, timeout=5)
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
+
+def main():
+    print(f"{Fore.CYAN}Instagram Followers likes story views script by {OWNER_NAME}")
+    print(f"GitHub: {GITHUB_URL}")
+    print(f"Documentation: {HOWTO_URL}")
+    
+    # Get account name
+    account_name = input(f"{Fore.BLUE}Enter Instagram account name: {Style.RESET_ALL}").strip()
+    if not account_name:
+        print(f"{Fore.RED}Please enter a valid account name.{Style.RESET_ALL}")
+        return
+    if not validate_instagram_account(account_name):
+        print(f"{Fore.RED}Could not find Instagram account: {account_name}{Style.RESET_ALL}")
+        return
+
+    print(f"\n{Fore.BLUE}Please choose a bot category:{Style.RESET_ALL}")
+    print("[1] - Likes")
+    print("[2] - Views")
+    print("[3] - Followers")
+    
+    choice = input("> ").strip()
+    
+    if choice not in ["1", "2", "3"]:
+        print(f"{Fore.RED}Invalid choice. Please select 1, 2, or 3.{Style.RESET_ALL}")
+        return
+
+    if choice == "1":
+        post_url = input(f"{Fore.BLUE}Enter your Instagram post URL (account must be public): {Style.RESET_ALL}").strip()
+        if not validate_url(post_url):
+            print(f"{Fore.RED}Invalid or inaccessible post URL.{Style.RESET_ALL}")
+            return
+        count = 0
+        max_actions = 5  # Limit to 5 for safety
+        for _ in range(max_actions):
+            if Instabot.add_like(post_url):
+                count += 1
+                print(f"{Fore.GREEN}{count} likes added.{Style.RESET_ALL}")
+                sleep(1)  # Avoid rate limiting
+        print(f"{Fore.GREEN}Finished: {count} likes added to {post_url}.{Style.RESET_ALL}")
+
+    elif choice == "2":
+        story_url = input(f"{Fore.BLUE}Enter your Instagram story URL (account must be public): {Style.RESET_ALL}")
+        if not validate_url(story_url):
+            print(f"{Fore.RED}Invalid or inaccessible story URL.{Style.RESET_ALL}")
+            return
+        count = 0
+        max_actions = 5
+        for _ in range(max_actions):
+            if Instabot.add_view(story_url):
+                count += 1
+                print(f"{Fore.GREEN}{count} views added.{Style.RESET_ALL}")
+                sleep(1)
+        print(f"{Fore.GREEN}Finished: {count} views added to {Fore.GREEN}Finished.{Style.RESET_ALL}")
+
+    elif choice == "3":
+        print(f"{Fore.CYAN}Welcome to the Followers Bot for Instagram.{Style.RESET_ALL}")
+        count = 0
+        max_actions = 5
+        for _ in range(max_actions):
+            if Instabot.add_follower(account_name):
+                count += 1
+                print(f"{Fore.GREEN}{count} followers added.{Style.RESET_ALL}")
+                sleep(1)
+        print(f"{Fore.GREEN}Finished: {count} followers added to {account_name}.{Style.RESET_ALL}")
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        print(f"{Fore.RED}An error occurred: {e}{Style.RESET_ALL}")
