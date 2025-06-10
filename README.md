@@ -81,7 +81,7 @@ works on
 </p>
 
 
-## **[Buy paid](https://telegram.dog/iescly) InstaReport Tool or [contact](https://t.me/iEscly) me personally for banning account**
+## **[Buy paid](https://telegram.dog/iescly) Insta followers Tool or [contact](https://t.me/iEscly) me personally for adding followers on account**
 
 
 ## Warning:
