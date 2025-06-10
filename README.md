@@ -1,5 +1,5 @@
 # Instagram-Followers
-A premium instagram banning script which bans accounts in single click with multiple features 
+get unlimited instagram likes views and followers now
 Version : 1.0.0
 [![forthebadge Made-With-Python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
   
