@@ -18,7 +18,6 @@ works on
 <a href="https://t.me/iEscly"><img src="https://img.shields.io/badge/-kali%20linux-lightgrey"></a>
 
 ### Features
-```
 [+]Validates Instagram account names and URLs via HTTP requests.
 [+]Simulates adding likes to Instagram posts, views to stories, and followers to accounts.
 [+]User-friendly CLI with colored output for better readability.
